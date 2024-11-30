@@ -1,0 +1,34 @@
+create database libreria;
+use libreria;
+
+create table libro(
+`codLibro` varchar(100) NOT NULL,
+  `isbn` varchar(50) DEFAULT NULL,
+  `autor` varchar(50) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
+  `anio` int(4) DEFAULT NULL,
+  `id_libro` int(11) NOT NULL primary key auto_increment
+);
+
+create table cliente(
+ `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
+  `rut` varchar(20) DEFAULT NULL,
+  `nomcli` varchar(50) DEFAULT NULL,
+  `ap_patcli` varchar(50) DEFAULT NULL,
+  `ap_matcli` varchar(50) DEFAULT NULL,
+  `direccion` varchar(100) DEFAULT NULL,
+  `correo` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_cliente`)
+);
+
+CREATE TABLE venta (
+  id_venta INT(11) NOT NULL AUTO_INCREMENT,
+  codVenta varchar(10),
+  cliente varchar(50)  NOT NULL, 
+  libro varchar(50) NOT NULL,   
+  cantidad INT(11) DEFAULT 1,  
+  fecha_venta DATE,-- Fecha de la venta,
+  neto int(11) DEFAULT NULL,
+  total INT(11) DEFAULT NULL,  
+  PRIMARY KEY (id_venta)
+);
